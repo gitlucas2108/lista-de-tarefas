@@ -8,6 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(() => {
   return {
+    base: './', // Garante que os caminhos de assets funcionem perfeitamente no GitHub Pages
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
