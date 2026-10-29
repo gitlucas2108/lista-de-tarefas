@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Lista de Tarefas (HTML + CSS + JS)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- 1. CABEÇALHO -->
+    <header class="header">
+      <div class="header-title">
+        <span class="icon-badge">✓</span>
+        <h1>Minhas Tarefas</h1>
+      </div>
+      <p class="subtitle">Acompanhe suas atividades pendentes e concluídas</p>
+    </header>
+
+    <!-- 2. RESUMO E ESTATÍSTICAS -->
+    <section class="stats-card">
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="metric-label">Total</span>
+          <span class="metric-value" id="totalCount">0</span>
+        </div>
+        <div class="metric-box pending">
+          <span class="metric-label">Pendentes</span>
+          <span class="metric-value" id="pendingCount">0</span>
+        </div>
+        <div class="metric-box completed">
+          <span class="metric-label">Concluídas</span>
+          <span class="metric-value" id="completedCount">0</span>
+        </div>
+      </div>
+
+      <!-- Barra de Progresso -->
+      <div class="progress-container">
+        <div class="progress-info">
+          <span>Progresso geral</span>
+          <span id="progressText">0% concluído</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ENTRADA DE NOVA TAREFA -->
+    <form id="todoForm" class="todo-form">
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="O que você precisa fazer hoje?"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="addBtn">+ Adicionar</button>
+    </form>
+
+    <!-- 4. FILTROS (TODAS, PENDENTES, CONCLUÍDAS) -->
+    <div class="filters-container">
+      <div class="filter-buttons">
+        <button type="button" class="filter-btn active" data-filter="todas">
+          Todas (<span id="filterAllCount">0</span>)
+        </button>
+        <button type="button" class="filter-btn" data-filter="pendentes">
+          Pendentes (<span id="filterPendingCount">0</span>)
+        </button>
+        <button type="button" class="filter-btn" data-filter="concluidas">
+          Concluídas (<span id="filterCompletedCount">0</span>)
+        </button>
+      </div>
+      <button type="button" id="clearCompletedBtn" class="clear-btn" style="display: none;">
+        Limpar concluídas
+      </button>
+    </div>
+
+    <!-- 5. LISTA DE TAREFAS -->
+    <ul id="taskList" class="task-list">
+      <!-- Itens serão gerados dinamicamente pelo arquivo app.js -->
+    </ul>
+
+    <!-- ESTADO VAZIO (quando não há tarefas) -->
+    <div id="emptyState" class="empty-state" style="display: none;">
+      <p class="empty-title" id="emptyTitle">Nenhuma tarefa aqui!</p>
+      <p class="empty-subtitle" id="emptySubtitle">Adicione sua primeira atividade no campo acima.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

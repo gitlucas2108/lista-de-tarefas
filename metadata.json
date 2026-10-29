@@ -1,0 +1,6 @@
+{
+  "name": "Lista de Tarefas (To-Do List)",
+  "description": "Aplicação simples de lista de tarefas para adicionar, concluir, remover e acompanhar atividades pendentes e concluídas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
